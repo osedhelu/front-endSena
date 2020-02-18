@@ -1,0 +1,103 @@
+<app-headboard></app-headboard>
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="card shadow">
+    <div class="card-header border-0">
+      <div class="row align-items-center">
+        <div class="col">
+          <h3 class="mb-0">Aprendices total <b>{{totalRegistros}}</b></h3>
+        </div>
+        <div class="col text-right">
+          <a [routerLink]="['/addStuden']" routerLinkActive="router-link-active"  class="btn btn-sm btn-primary">Nuevo Reporte</a>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <!--  -->
+<!-- <div class="row">
+<div class="col-xl-3 col-lg-6">
+<div class="card card-stats mb-4 mb-xl-0">
+<div class="card-body">
+<div class="row">
+<div class="col">
+<h5 class="card-title text-uppercase text-muted mb-0">Studen</h5>
+<span class="h2 font-weight-bold mb-0">{{studen.length}}</span>
+</div>
+<div class="col-auto">
+<div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+<i class="fas fa-chart-bar"></i>
+</div>
+</div>
+</div>
+<p class="mt-3 mb-0 text-muted text-sm">
+<span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+<span class="text-nowrap">Since last month</span>
+</p>
+</div>
+</div>
+</div>
+
+</div> -->
+<div class="container">
+  <div class="row">
+
+  </div>
+</div>
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="table align-items-center table-flush">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">foto</th>
+              <th scope="col">numero de documento</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Numero de Ficha</th>
+              <th scope="col">Nombre de programa</th>
+              <th scope="col">i</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let studen of studen">
+              <th scope="row">
+              
+                  <a href="#" class="avatar rounded-circle mr-3">
+                    <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
+                  </a>
+              </th>
+              
+              <td>
+                {{studen.TypeDocument}}  {{studen.cedula }}
+                
+              </td>
+              <td>
+                {{studen.name}}
+                
+              </td>
+              <td>
+                {{studen.NumCourse}}
+                
+              </td>
+                <td>
+                {{studen.titleCourse}}
+                
+              </td>
+              <td>  
+                  <button  (click)="deletestuden(studen._id)" class="btn btn-success"><i class="fa fa-edit"> </i></button>      
+                  <button (click)="editstuden(studen._id)"class="btn btn-danger"><i class="fa fa-trash"> </i></button>      
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+        <button (click)="fnAumentar(-5)" class="btn btn-secondary"> anterios</button>
+        <button (click)="fnAumentar(+5)" class="btn btn-secondary"> siguiente</button>
+<!--  -->
+<!--  -->
+</div>
+<!-- Footer -->
+<app-footer></app-footer>
+<!-- Footer -->
+
+</div>
